@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estiloGeneral.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Revalia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Revalia&display=swap" rel="stylesheet">      
+    <title>Eclipse</title>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">InspirArte</h1>
+        <nav>
+            <div class="logo">InspirArte</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            </div>
+            <ul class="nav-links">
+                <li><button class="close-menu" onclick="toggleMenu()">←</button></li> 
+                  <li><a href="../../paginas/menu/artistas.html" class="menu">Artistas</a> </li>
+                  <li><a href="../../paginas/menu/contacto.html" class="menu">Contacto</a> </li>
+                  <li><a href="../../paginas/menu/eventos.html" class="menu">Eventos</a> </li>
+                  <li><a href="../../paginas/menu/noticias.html" class="menu">Noticias</a> </li>
+                  <li><a href="../../paginas/menu/carrito.html" class="menu"><img id="carrito" src="../../imagenes/iconos/carrito.png" height="20px" width="20px"></a></li>
+                  <li><a href="../../paginas/menu/usuario.html" class="menu"><img id="carrito" src="../../imagenes/iconos/perfil.png" height="20px" width="20px"></a></li>
+              </ul>
+          </nav>
+    </header>
+    <article>
+        <div class="product-container">
+            <div class="image-gallery">
+                <img src="../../imagenes/obras/eclipse.png" alt="Eclipse">
+            </div>
+
+            <div class="product-details">
+                <h1>Eclipse</h1>
+                <p>La obra "Eclipse" de Wanda Koop es una pieza que refleja su estilo característico 
+                    de paisajes minimalistas y oníricos. Esta pintura se destaca por su atmósfera 
+                    misteriosa y contemplativa, donde el uso de formas simples y colores suaves captura 
+                    un momento de quietud y belleza. En "Eclipse", Koop representa un paisaje con un 
+                    cielo oscuro en el que se observa un eclipse, utilizando tonos profundos de morado y 
+                    negro para crear una sensación de calma y silencio, interrumpido solo por la luz 
+                    tenue del eclipse.</p>
+                    <button class="add-to-cart" onclick="addToCart('Eclipse', '../../imagenes/obras/eclipse.png', 1200.50)">Añadir al Carrito</button>
+                    <button class="buy-now">Comprar Ahora</button>
+                    <div class="product-info">
+                        <p><strong>Artista:</strong> Wanda Koop</p>
+                        <p><strong>Año:</strong> 2023</p>
+                        <p id="precio"><strong>Precio:</strong> $1,200.50</p>
+                        <p><strong>Tamaño:</strong> 120cm x 80cm</p>
+                    </div>
+            </div>
+        </div>
+    </article>  
+    <script src="../../js/carrito.js"></script>
+    <script src="../../js/menuAdaptable.js"></script>
+</body>
+</html>

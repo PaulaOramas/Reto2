@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estiloGeneral.css"></link>
+    <link rel="stylesheet" href="../../css/estilosprueba.css"></link>
+    <link rel="stylesheet" href="../../css/modoOscuro.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Revalia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Revalia&display=swap" rel="stylesheet">      
+
+    <title>Artistas</title>
+</head>
+<body>
+    <header>
+        <h1 id="inicio"><a href="../../InspirArte.html">InspirArte</a></h1>
+        <nav>
+            <div class="logo">Artistas</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            </div>
+            <ul class="nav-links">
+              <li><button class="close-menu" onclick="toggleMenu()">←</button></li> 
+              <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider"></span>
+                </label>
+                <li><a href="../../paginas/menu/artistas.html" class="menu">Artistas</a> </li>
+                <li><a href="../../paginas/menu/contacto.html" class="menu">Contacto</a> </li>
+                <li><a href="../../paginas/menu/eventos.html" class="menu">Eventos</a> </li>
+                <li><a href="../../paginas/menu/noticias.html" class="menu">Noticias</a> </li>
+                <li><a href="../../paginas/menu/carrito.html" class="menu"><img id="carrito" src="../../imagenes/iconos/carrito.png" height="20px" width="20px"></a></li>
+                <li><a href="../../paginas/menu/usuario.html" class="menu"><img id="carrito" src="../../imagenes/iconos/perfil.png" height="20px" width="20px"></a></li>
+            </ul>
+          </nav>
+    </header>
+    <div class="font-size-controls">
+        <label for="font-size-selector">Tamaño de letra:</label>
+        <select id="font-size-selector">
+            <option value="normal" selected>Normal</option>
+            <option value="small">Pequeño</option>
+            <option value="large">Grande</option>
+        </select>
+    </div>
+    <article>
+      <h2 style="text-align: center;">Nuestros Artistas</h2>
+      <div class="gallery">
+          <div class="card">
+              <a href="../../paginas/artistas/jakeGrewal.html">
+                  <img src="../../imagenes/artistas/jakeGrewal.png" alt="Jake Grewal">
+              </a>
+              <a href="../../paginas/artistas/jakeGrewal.html" class="enlace">Jake Grewal</a>
+          </div>
+          <div class="card">
+              <a href="../../paginas/artistas/wandaKoop.html">
+                  <img src="../../imagenes/artistas/wandaKoop.png" alt="Wanda Koop">
+              </a>
+              <a href="../../paginas/artistas/wandaKoop.html" class="enlace">Wanda Koop</a>
+          </div>
+          <div class="card">
+              <a href="../../paginas/artistas/jesseMockrin.html">
+                  <img src="../../imagenes/artistas/jesseMockrin.png" alt="Jesse Mockrin">
+              </a>
+              <a href="../../paginas/artistas/jesseMockrin.html" class="enlace">Jesse Mockrin</a>
+          </div>
+          <div class="card">
+              <a href="../../paginas/artistas/kenNwadiogbu.html">
+                  <img src="../../imagenes/artistas/kenNwadiogbu.png" alt="Ken Nwadiogbu">
+              </a>
+              <a href="../../paginas/artistas/kenNwadiogbu.html" class="enlace">Ken Nwadiogbu</a>
+          </div>
+          <div class="card">
+              <a href="../../paginas/artistas/georgeRouy.html">
+                  <img src="../../imagenes/artistas/georgeRouy.png" alt="George Rouy">
+              </a>
+              <a href="../../paginas/artistas/georgeRouy.html" class="enlace">George Rouy</a>
+          </div>
+          <div class="card">
+              <a href="../../paginas/artistas/adelisaSelimbasic.html">
+                  <img src="../../imagenes/artistas/adelisSelimbasic.png" alt="Adelisa Selimbašić">
+              </a>
+              <a href="../../paginas/artistas/adelisaSelimbasic.html" class="enlace">Adelisa Selimbašić</a>
+          </div>
+          <div class="card">
+              <a href="../../paginas/artistas/florineStettheimer.html">
+                  <img src="../../imagenes/artistas/florineStettheimer.png" alt="Florine Stettheimer">
+              </a>
+              <a href="../../paginas/artistas/florineStettheimer.html" class="enlace">Florine Stettheimer</a>
+          </div>
+          <div class="card">
+              <a href="paginas/obras/theCathedralsOfArt.html">
+                  <img src="../../imagenes/artistas/igshaanAdams.png" alt="Igshaan Adams">
+              </a>
+              <a href="paginas/obras/theCathedralsOfArt.html" class="enlace">Igshaan Adams</a>
+          </div>
+          <div class="card">
+              <a href="paginas/obras/theCathedralsOfArt.html">
+                  <img src="../../imagenes/artistas/terryAdkins.png" alt="Terry Adkins">
+              </a>
+              <a href="paginas/obras/theCathedralsOfArt.html" class="enlace">Terry Adkins</a>
+          </div>
+          <div class="card">
+              <a href="paginas/obras/theCathedralsOfArt.html">
+                  <img src="../../imagenes/artistas/hurvinAnderson.png" alt="Hurvin Anderson">
+              </a>
+              <a href="paginas/obras/theCathedralsOfArt.html" class="enlace">Hurvin Anderson</a>
+          </div>
+          <div class="card">
+              <a href="paginas/obras/theCathedralsOfArt.html">
+                  <img src="../../imagenes/artistas/arturoHerrera.png" alt="Arturo Herrera">
+              </a>
+              <a href="paginas/obras/theCathedralsOfArt.html" class="enlace">Arturo Herrera</a>
+          </div>
+          <div class="card">
+              <a href="paginas/obras/theCathedralsOfArt.html">
+                  <img src="../../imagenes/artistas/xieNanxing.png" alt="Xie Nanxing">
+              </a>
+              <a href="paginas/obras/theCathedralsOfArt.html" class="enlace">Xie Nanxing</a>
+          </div>
+          <div class="card">
+              <a href="paginas/obras/theCathedralsOfArt.html">
+                  <img src="../../imagenes/artistas/patriciaLeite.png" alt="Patricia Leite">
+              </a>
+              <a href="paginas/obras/theCathedralsOfArt.html" class="enlace">Patricia Leite</a>
+          </div>
+      </div>
+      
+    </article>  
+    <script src="../../js/menuAdaptable.js"></script>
+    <script src="../../js/modoOscuro.js"></script>
+</body>
+</html>

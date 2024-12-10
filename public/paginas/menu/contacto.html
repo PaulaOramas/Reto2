@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estilosprueba.css"></link>
+    <link rel="stylesheet" href="../../css/estiloGeneral.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Revalia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Revalia&display=swap" rel="stylesheet">      
+
+    <title>Eventos</title>
+</head>
+<body>
+    <header>
+        <h1 id="inicio"><a href="../../InspirArte.html">InspirArte</a></h1>
+        <nav>
+            <div class="logo">Contacto</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            </div>
+            <ul class="nav-links">
+                <li><button class="close-menu" onclick="toggleMenu()">←</button></li> 
+                  <li><a href="../../paginas/menu/artistas.html" class="menu">Artistas</a> </li>
+                  <li><a href="../../paginas/menu/contacto.html" class="menu">Contacto</a> </li>
+                  <li><a href="../../paginas/menu/eventos.html" class="menu">Eventos</a> </li>
+                  <li><a href="../../paginas/menu/noticias.html" class="menu">Noticias</a> </li>
+                  <li><a href="../../paginas/menu/carrito.html" class="menu"><img id="carrito" src="../../imagenes/iconos/carrito.png" height="20px" width="20px"></a></li>
+                  <li><a href="../../paginas/menu/usuario.html" class="menu"><img id="carrito" src="../../imagenes/iconos/perfil.png" height="20px" width="20px"></a></li>
+              </ul>
+          </nav>
+    </header>
+    
+    <article>
+        <main class="main-container">
+            <div class="locations">
+                <section>
+                    <h2>Quito</h2>
+                    <p>Dirección: Av. Colón y 6 de Diciembre, Quito, Ecuador</p>
+                    <p>Teléfono: +593 (02) 123 4567</p>
+                    <p>Correo: quito@inspirarte.com</p>
+                    <p><strong>Horario de Atención:</strong></p>
+                    <ul>
+                        <li>Lunes a Viernes: 10:00 - 18:00</li>
+                        <li>Sábados: 10:00 - 14:00</li>
+                    </ul>
+                    <img src="../../imagenes/iconos/ubiQuito.png" alt="Mapa de Quito">
+                </section>
+                <section>
+                    <h2>Guayaquil</h2>
+                    <p>Dirección: Av. Francisco de Orellana, Guayaquil, Ecuador</p>
+                    <p>Teléfono: +593 (04) 987 6543</p>
+                    <p>Correo: guayaquil@inspirarte.com</p>
+                    <p><strong>Horario de Atención:</strong></p>
+                    <ul>
+                        <li>Lunes a Viernes: 10:00 - 18:00</li>
+                        <li>Sábados: 10:00 - 14:00</li>
+                    </ul>
+                    <img src="../../imagenes/iconos/ubiGuayaquil.png" alt="Mapa de Guayaquil">
+                </section>
+            </div>
+    
+            <div class="mailing-list">
+                <h2>Lista de Correo:</h2>
+                <form action="#" method="post">
+                    <label for="first-name">Nombre:</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Nombre" required>
+            
+                    <label for="last-name">Apellido:</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Apellido" required>
+            
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+            
+                    <button type="submit">Enviar</button>
+                </form>
+                <p>Sus datos se procesarán de acuerdo a nuestra política de privacidad.</p>
+            </div>
+            
+        </main>
+    </article>  
+    <script src="../../js/menuAdaptable.js"></script>
+</body>
+</html>

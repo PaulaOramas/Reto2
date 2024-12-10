@@ -1,0 +1,639 @@
+/* Ajuste del cuerpo */
+body{
+    background-image: url(../imagenes/fondos/Fondo\ de\ textura\ de\ cerca\ de\ papel\ arrugado\ amarillo\ _\ Foto\ Premium.jpeg );
+    font-family: "Gugi", sans-serif;
+    font-size: 1em;
+}
+
+/* Estilo para encabezados */
+h1{
+    color: #67127c;
+    font-size: 2.5em;
+}
+
+h2{
+    color: purple;
+    font-size: 2em;
+}
+
+/* Enlaces */
+.enlace{
+    text-decoration: none;
+    color: #9f469f;
+    display: block;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 0.2em;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+/* Párrafos */
+p{
+    font-size: 20px;
+    color: #4b074b;
+}
+/*separador*/
+hr {
+  border: none;
+  height: 1px;
+  background-color: #8a4ebf;
+  margin: 20px 0;
+}
+
+/* Galería */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 5em;
+    margin: 1.5em;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    text-align: center;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    
+  }
+
+  /* Imágenes dentro de las tarjetas */
+  .card img {
+    width: 200px;
+    height: 250px;
+    object-fit: contain; /* Asegura que la imagen no se deforme */
+    border-radius: 15px;
+    background-color: white;
+  }
+  .card img:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Resalta la imagen con una sombra */
+  }
+
+  /* Contenido con imágenes y descripciones */
+  .product-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.image-gallery {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: auto;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+
+  .product-details h1 {
+    color: #333;
+    font-size: 1.5em;
+  }
+
+  .product-details p {
+    font-size: 16px;
+    color: #666;
+  }
+  .product-details {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    margin-left: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    height: 70%;
+    margin-top: 1.5em;
+}
+
+.add-to-cart, .buy-now {
+  background-color: #67127c;
+  color: white;
+  padding: 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+}
+
+
+.add-to-cart:hover, .buy-now:hover {
+  background-color: #8a4ebf;
+}
+
+.buy-now {
+  background-color: #ffcc00;
+  color: #4b074b;
+}
+
+.buy-now:hover {
+  background-color: #e5b800;
+}
+
+/* Información adicional */
+.product-info p {
+  font-size: 1em;
+  color: #333;
+}
+
+.product-info p strong {
+  color: #67127c;
+}
+
+  .menu{
+    display: block;
+    padding: 1em;
+    text-align: center;
+    margin-right: 0.2em;
+    margin-bottom: 0.2em;
+    text-decoration: none;
+    color: purple;
+    border-radius: 10px;
+
+  }
+  .menu-icon {
+    display: block;
+    font-size: 2em;
+    cursor: pointer;
+    color: #67127c;
+    margin-right: 10px;
+    display: none;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-links li {
+    margin-left: 2em;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #67127c;
+    font-weight: bold;
+  }
+
+  .menu:hover {
+    background-color: #8a4ebf;
+    color: #e5c000;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Resalta la imagen con una sombra */
+  }
+  .close-menu {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .logo {
+        display: none; /* Ocultar el logo cuando la pantalla sea pequeña */
+      }
+    .menu-icon {
+      display: block; /* Mostrar icono de menú en pantallas pequeñas */
+    }
+  
+    .nav-links {
+        position: fixed; 
+        right: -100%; 
+        top: 0;
+        height: 100vh; 
+        width: 250px; 
+        background-image: url(../imagenes/fondos/Fondo\ de\ textura\ de\ cerca\ de\ papel\ arrugado\ amarillo\ _\ Foto\ Premium.jpeg );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease; 
+        box-shadow: 0 4px 15px rgba(138, 78, 191, 0.5);
+        /*border: 2px solid #4b074b;*/
+        border-radius: 10px;
+    }
+  
+    .nav-links li {
+        width: 100%;
+        margin: 1.5em 0;
+        text-align: center;
+        height: 5%;
+    }
+  
+    .nav-links.active {
+      right: 0; /* Mostrar el menú lateral cuando esté activo */
+    }
+    ul {
+        flex-direction: column; 
+      }
+      .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 1em;
+        color: #67127c; /* Color del texto */
+        font-weight: bold;
+        border-radius: 10px;
+        text-decoration: none;
+      }
+      .nav-links a:hover {
+        background-color: #8a4ebf;
+        color: #e5c000;
+      }
+      .close-menu {
+        display: block;
+        width: 100%;
+        color: #67127c;
+        font-size: 1.2em;
+        border: none;
+        padding: 1em;
+        margin-top: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-align: center;
+        background-color: transparent;
+      }
+      
+      .close-menu:hover {
+        color: #e5c000;
+        background-color: #8a4ebf; /* Cambiar el color al pasar el cursor */
+      }
+
+
+    .menu-icon {
+        display: block;
+    }
+    .product-container {
+      flex-direction: column;
+      margin-left: 0;
+
+  }
+
+  .product-details {
+      margin-top: 20px;
+      padding: 10px;
+      margin-left: 0;
+  }
+}
+header{
+    display: flex;
+    justify-content: space-between; /* Coloca el logo y el icono a los lados */
+    align-items: center; /* Centra verticalmente el logo y el icono */
+    padding: 1em;
+    background-color: transparent;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.logo {
+    font-size: 2em;
+    color: #67127c;
+    margin-left: 10px; /* Ajuste de margen si es necesario */
+  }
+  /* Contenedor principal */
+.container {
+  display: flex; /* Alinea el carrusel y las noticias en columnas */
+  justify-content: center; /* Centra el contenido principal horizontalmente */
+  gap: 20px; /* Espacio entre el carrusel y las noticias */
+  align-items: flex-start; /* Alinea los elementos en la parte superior */
+  margin: 0 auto; /* Centra el contenedor en la página */
+  max-width: 1200px; /* Limita el ancho máximo del contenido */
+}
+
+/* Carrusel */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido del carrusel */
+  justify-content: center;
+  flex: 2; /* Da más espacio al carrusel */
+  text-align: center;
+}
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido del carrusel */
+  justify-content: center;
+  flex: 2; /* Da más espacio al carrusel */
+  max-width: 600px; /* Ancho máximo del carrusel */
+  text-align: center;
+  margin: 0 auto; /* Centra horizontalmente */
+}
+
+.carousel img {
+  width: 100%;
+  max-width: 400px; /* Limita el tamaño máximo */
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.carousel-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el texto debajo de la imagen */
+  justify-content: center;
+  font-size: 16px;
+  color: #333; /* Color del texto */
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Modal */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+  justify-content: center;
+  align-items: center;
+  overflow: auto; /* Permite desplazamiento si el contenido es muy grande */
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 80%; /* Ajusta el tamaño máximo del modal al 80% del ancho de la pantalla */
+  max-height: 80%; /* Ajusta el tamaño máximo del modal al 80% de la altura de la pantalla */
+  width: auto; /* Ajuste automático */
+  height: auto; /* Ajuste automático */
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.modal img {
+  width: 100%;
+  height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+  max-height: calc(100% - 50px); /* Asegura que la imagen no se desborde del modal */
+  border-radius: 10px;
+  object-fit: contain; /* Asegura que la imagen se ajuste dentro del espacio disponible */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Noticias */
+.sidebar {
+  flex: 1; /* Ocupa menos espacio */
+  max-width: 300px; /* Ancho máximo de la barra lateral */
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+  position: relative;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #9f469f; /* Color del título de noticias */
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+}
+
+.news-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc; /* Línea separadora */
+  padding-bottom: 10px;
+}
+
+.news-list img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+
+.news-list p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.sidebar a {
+  display: block;
+  text-align: center;
+  color: #9f469f;
+  font-weight: bold;
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Adaptabilidad para pantallas pequeñas */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .carousel {
+      margin-bottom: 20px;
+  }
+
+  .sidebar {
+      width: 100%;
+      max-width: none;
+  }
+}
+a{
+  text-decoration: none; 
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row; /* Organiza miniaturas y la imagen principal en filas */
+  align-items: center;
+  gap: 15px;
+}
+
+/* Miniaturas */
+.thumbnails {
+  display: flex;
+  flex-direction: column; /* Organiza las miniaturas en una columna */
+  gap: 10px;
+  max-height: 400px; /* Limita la altura */
+  overflow-y: auto; /* Agrega scroll si hay muchas miniaturas */
+}
+
+.thumbnails img {
+  width: 60px; /* Tamaño de las miniaturas */
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.thumbnails img:hover {
+  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Imagen principal */
+.main-image img {
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Contenedor principal */
+.main-container {
+  display: flex;
+  flex-direction: column; /* En pantallas más pequeñas, apilamos los elementos */
+  gap: 15px;
+  align-items: center; /* Alinea los elementos al centro */
+}
+
+/* Sección de Mailing List */
+.mailing-list {
+  width: 80%; /* Reduce el ancho al 80% del contenedor */
+  max-width: 400px; /* Límite máximo de ancho para que no se haga demasiado grande */
+  padding: 15px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mailing-list form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mailing-list input,
+.mailing-list button {
+  padding: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.mailing-list button {
+  background-color: #6A1B9A;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.mailing-list button:hover {
+  background-color: #8E24AA;
+}
+
+/* Para la sección de ubicaciones */
+.locations {
+  display: flex;
+  justify-content: space-between; /* Distribuye las ubicaciones */
+  gap: 15px; /* Menos espacio entre las ubicaciones */
+  width: 90%; /* Ancho del 90% */
+  max-width: 1200px; /* Límite de ancho */
+  flex-wrap: wrap; /* Permite que los elementos se acomoden mejor en pantallas pequeñas */
+}
+
+/* Para las ubicaciones individuales */
+.locations section {
+  width: 45%; /* Reduce el ancho de cada sección */
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.locations img {
+  width: 100%; /* Asegura que las imágenes se ajusten al contenedor */
+  border-radius: 10px;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .locations {
+      flex-direction: column; /* Apila las ubicaciones */
+      gap: 20px; /* Añade espacio entre las ubicaciones */
+  }
+
+  .mailing-list {
+      width: 90%; /* Ajusta el ancho de Mailing List en pantallas pequeñas */
+      margin: 0 auto;
+  }
+}
+
+/* Estilo para la galería de exhibiciones */
+.exhibitions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Estilo para cada tarjeta de exhibición */
+.exhibition-card {
+  width: 280px; /* Ancho fijo para cada tarjeta */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: white;
+  text-align: center;
+}
+
+/* Estilo para la imagen de la exhibición */
+.exhibition-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para el texto de la tarjeta */
+.exhibition-text {
+  padding: 15px;
+}
+
+.exhibition-text .exhibition-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.exhibition-text .exhibition-title:hover {
+  color: #6A1B9A; /* Cambio de color al pasar el mouse */
+}
+
+.exhibition-text .date,
+.exhibition-text .location {
+  margin: 5px 0;
+  color: #777;
+  font-size: 0.9rem;
+}
+

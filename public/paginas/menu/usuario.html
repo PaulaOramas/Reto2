@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estilosprueba.css"></link>
+    <link rel="stylesheet" href="../../css/estiloGeneral.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Revalia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Revalia&display=swap" rel="stylesheet">      
+
+    <title>usuario</title>
+</head>
+<body>
+    <header>
+        <h1 id="inicio"><a href="../../InspirArte.html">InspirArte</a></h1>
+        <nav>
+            <div class="logo">Perfil</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            </div>
+            <ul class="nav-links">
+              <li><button class="close-menu" onclick="toggleMenu()">←</button></li> 
+                <li><a href="../../paginas/menu/artistas.html" class="menu">Artistas</a> </li>
+                <li><a href="../../paginas/menu/contacto.html" class="menu">Contacto</a> </li>
+                <li><a href="../../paginas/menu/eventos.html" class="menu">Eventos</a> </li>
+                <li><a href="../../paginas/menu/noticias.html" class="menu">Noticias</a> </li>
+                <li><a href="../../paginas/menu/carrito.html" class="menu"><img id="carrito" src="../../imagenes/iconos/carrito.png" height="20px" width="20px"></a></li>
+                <li><a href="../../paginas/menu/usuario.html" class="menu"><img id="carrito" src="../../imagenes/iconos/perfil.png" height="20px" width="20px"></a></li>
+            </ul>
+          </nav>
+    </header>
+        <div class="container">
+            <div class="form-container" id="login-container">
+                <h1 class="title">Inicio de Sesión</h1>
+                <form id="login-form">
+                    <label for="username">Nombre de usuario:</label>
+                    <input type="text" id="email" name="username" placeholder="Nombre de usuario" required>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    <button type="submit" class="btn-enviar">Iniciar Sesión</button>
+                </form>
+                <div class="extra-links">
+                    <a href="../../paginas/Usuario/registarse.html" class="link">Crear una cuenta</a>
+                </div>
+            </div>
+        
+            <!-- Contenedor del mensaje de bienvenida -->
+            <div class="welcome-container" id="welcome-container" style="display: none;">
+                <h1 id="welcome-message"></h1>
+                <button id="logout-button" class="btn-enviar">Cerrar Sesión</button>
+            </div>
+        </div>
+        
+    </article>  
+    <script src="../../js/menuAdaptable.js"></script>
+    <script src="../../js/login.js"></script>
+
+
+</body>
+</html>

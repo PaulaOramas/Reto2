@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estiloGeneral.css"></link>
+    <link rel="stylesheet" href="css/estilosprueba.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Revalia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Revalia&display=swap" rel="stylesheet">               
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>InspirArte</title>
+</head>
+<body>
+    <header>
+      <h1 style="text-align: center;">InspirArte</h1>
+        <nav>
+          <div class="logo">InspirArte</div>
+          <div class="menu-icon" onclick="toggleMenu()">☰</div>
+          </div>
+            <ul class="nav-links">
+              <li><button class="close-menu" onclick="toggleMenu()">←</button></li> 
+                <li><a href="paginas/menu/artistas.html" class="menu">Artistas</a> </li>
+                <li><a href="paginas/menu/contacto.html" class="menu">Contacto</a> </li>
+                <li><a href="paginas/menu/eventos.html" class="menu">Eventos</a> </li>
+                <li><a href="paginas/menu/noticias.html" class="menu">Noticias</a> </li>
+                <li><a href="paginas/menu/carrito.html" class="menu"><img id="carrito" src="imagenes/iconos/carrito.png" height="20px" width="20px"></a></li>
+                <li><a href="paginas/menu/usuario.html" class="menu"><img id="carrito" src="imagenes/iconos/perfil.png" height="20px" width="20px"></a></li>
+            </ul>
+    </header>
+    <article>
+
+      <div class="container">
+        <div class="main-content">
+            <h2 style="text-align: center;">Destacadas</h2>
+            <div class="carousel">
+                <img id="gallery-img" src="" alt="Galería de obras" onclick="openModal()">
+                <div class="carousel-description">
+                    <h3 id="gallery-title"></h3>
+                    <p id="gallery-info"></p>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <h2>Noticias</h2>
+            <ul class="news-list">
+                <li>
+                    <img src="imagenes/noticias/noticia1.png" alt="Noticia 1">
+                    <p>27.11.24 - Thomas Dane Gallery at Art Basel Miami Beach</p>
+                </li>
+                <li>
+                    <img src="imagenes/noticias/noticia2.png" alt="Noticia 2">
+                    <p>25.11.24 - Paul Pfeiffer: Prologue to the Story of the Birth of Freedom</p>
+                </li>
+                <li>
+                    <img src="imagenes/noticias/noticia3.png" alt="Noticia 3">
+                    <p>25.11.24 - House of Voltaire presents ‘GREATEST HITS’</p>
+                </li>
+            </ul>
+            <a href="paginas/menu/noticias.html" style="color: #9f469f;">Ver más</a>
+        </div>
+    </div>
+    
+        <!-- Modal -->
+<!-- Modal -->
+<div id="featuredModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-body">
+            <!-- Miniaturas -->
+            <!-- Imagen principal -->
+            <div class="main-image">
+                <img id="modal-img" src="" alt="Imagen destacada">
+                <h3 id="modal-title"></h3>
+                <p id="modal-info"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </article>  
+
+
+    <script src="js/menuAdaptable.js"></script>
+    <script src="js/carrusel.js"></script>
+</body>
+</html>

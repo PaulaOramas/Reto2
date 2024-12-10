@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estiloGeneral.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Revalia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Revalia&display=swap" rel="stylesheet">      
+    <title>Porcelain</title>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">InspirArte</h1>
+        <nav>
+            <div class="logo">InspirArte</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            </div>
+            <ul class="nav-links">
+                <li><button class="close-menu" onclick="toggleMenu()">←</button></li> 
+                  <li><a href="../../paginas/menu/artistas.html" class="menu">Artistas</a> </li>
+                  <li><a href="../../paginas/menu/contacto.html" class="menu">Contacto</a> </li>
+                  <li><a href="../../paginas/menu/eventos.html" class="menu">Eventos</a> </li>
+                  <li><a href="../../paginas/menu/noticias.html" class="menu">Noticias</a> </li>
+                  <li><a href="../../paginas/menu/carrito.html" class="menu"><img id="carrito" src="../../imagenes/iconos/carrito.png" height="20px" width="20px"></a></li>
+                  <li><a href="../../paginas/menu/usuario.html" class="menu"><img id="carrito" src="../../imagenes/iconos/perfil.png" height="20px" width="20px"></a></li>
+              </ul>
+          </nav>
+    </header>
+    <article>
+        <div class="product-container">
+            <div class="image-gallery">
+                <img src="../../imagenes/obras/porcelain.png" alt="porcelain">
+            </div>
+
+            <div class="product-details">
+                <h1>Porcelain</h1>
+                <p>"Porcelain" de Adelisa Selimbašić es una obra que explora la fragilidad y 
+                    vulnerabilidad del cuerpo humano, combinando elementos de lo físico con lo 
+                    emocional. En esta pintura, Selimbašić representa una figura humana desnuda con 
+                    un enfoque en la piel y los detalles anatómicos, evocando una sensación de 
+                    vulnerabilidad y exposición. La obra utiliza tonos suaves y delicados, como el 
+                    rosa y el blanco, que recuerdan la delicadeza de la porcelana, un material que 
+                    es a la vez hermoso y frágil.</p>
+            
+                <button class="add-to-cart" onclick="addToCart('Porcelain', '../../imagenes/obras/porcelain.png', 899.99)">Añadir al Carrito</button>
+                <button class="buy-now">Comprar Ahora</button>
+                <div class="product-info">
+                    <p><strong>Artista:</strong> Adelisa Selimbašić</p>
+                    <p><strong>Año:</strong> 2023</p>
+                    <p id="precio"><strong>Precio:</strong> $899.99</p>
+                    <p><strong>Tamaño:</strong> 120cm x 80cm</p>
+                </div>
+            </div>
+        </div>
+    </article>  
+    <script src="../../js/carrito.js"></script>
+    <script src="../../js/menuAdaptable.js"></script>
+</body>
+</html>

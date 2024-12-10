@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estilosprueba.css"></link>
+    <link rel="stylesheet" href="../../css/estiloGeneral.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Revalia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Revalia&display=swap" rel="stylesheet">      
+
+    <title>carrito</title>
+</head>
+<body>
+    <header>
+        <h1 id="inicio"><a href="../../InspirArte.html">InspirArte</a></h1>
+        <nav>
+            <div class="logo">Carrito</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            </div>
+            <ul class="nav-links">
+              <li><button class="close-menu" onclick="toggleMenu()">←</button></li> 
+                <li><a href="../../paginas/menu/artistas.html" class="menu">Artistas</a> </li>
+                <li><a href="../../paginas/menu/contacto.html" class="menu">Contacto</a> </li>
+                <li><a href="../../paginas/menu/eventos.html" class="menu">Eventos</a> </li>
+                <li><a href="../../paginas/menu/noticias.html" class="menu">Noticias</a> </li>
+                <li><a href="../../paginas/menu/carrito.html" class="menu"><img id="carrito" src="../../imagenes/iconos/carrito.png" height="20px" width="20px"></a></li>
+                <li><a href="../../paginas/menu/usuario.html" class="menu"><img id="carrito" src="../../imagenes/iconos/perfil.png" height="20px" width="20px"></a></li>
+            </ul>
+          </nav>
+    </header>
+    
+    <article>
+        <div class="cart-container">
+            <h2>Tu Carrito</h2>
+            <div class="cart-items">
+                <div class="image-gallery">
+                    <img src="../../imagenes/iconos/carritoVacio.png" >
+                </div>
+            </div>
+            <div class="cart-summary">
+                <p>Subtotal: <span id="subtotal">$0.00</span></p>
+                <p>IVA (15%): <span id="iva">$0.00</span></p>
+                <p>Total: <span id="total">$0.00</span></p>
+
+                <button id="pay-button" class="btn-pay">Pagar</button>
+            </div>
+        </div>        
+    </article>  
+
+    <script src="../../js/menuAdaptable.js"></script>
+    <script src="../../js/carrito.js"></script>
+</body>
+</html>

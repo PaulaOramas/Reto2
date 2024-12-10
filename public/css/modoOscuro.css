@@ -1,0 +1,135 @@
+
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.card a.enlace {
+    color: #6a1b9a; /* Color de enlace en modo claro */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a.enlace:hover {
+    text-decoration: underline;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-image: url(../imagenes/fondos/fondoOscuro.jpg);
+    color: #ffffff; /* Texto claro */
+}
+
+.card.dark-mode {
+    background-color: #222222;
+    border-color: #444444;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.card.dark-mode a.enlace {
+    color: #bb86fc; /* Color de enlace en modo oscuro */
+}
+
+.card.dark-mode a.enlace:hover {
+    text-decoration: underline;
+}
+
+h1, h2 {
+    text-align: center;
+    font-family: 'Gugi', cursive;
+}
+
+h1 a, h2 {
+    color: inherit; /* Mantiene el color adecuado según el modo */
+}
+
+.nav-links a {
+    color: #6a1b9a; /* Color de enlaces del menú */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+body.dark-mode .nav-links a {
+    color: #bb86fc; /* Color de enlaces del menú en modo oscuro */
+}
+
+.switch {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: 0.4s;
+}
+
+.switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #444;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+/* Tamaño pequeño */
+body.font-small {
+    font-size: 12px;
+}
+
+/* Tamaño grande */
+body.font-large {
+    font-size: 22px;
+}
+
+.font-size-controls {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#font-size-selector {
+    padding: 5px;
+    font-size: 14px;
+}

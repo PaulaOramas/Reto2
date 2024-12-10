@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estiloGeneral.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Revalia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Revalia&display=swap" rel="stylesheet">      
+    <title>Ghost and Shadows</title>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">InspirArte</h1>
+        <nav>
+            <div class="logo">InspirArte</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            </div>
+            <ul class="nav-links">
+                <li><button class="close-menu" onclick="toggleMenu()">←</button></li> 
+                  <li><a href="../../paginas/menu/artistas.html" class="menu">Artistas</a> </li>
+                  <li><a href="../../paginas/menu/contacto.html" class="menu">Contacto</a> </li>
+                  <li><a href="../../paginas/menu/eventos.html" class="menu">Eventos</a> </li>
+                  <li><a href="../../paginas/menu/noticias.html" class="menu">Noticias</a> </li>
+                  <li><a href="../../paginas/menu/carrito.html" class="menu"><img id="carrito" src="../../imagenes/iconos/carrito.png" height="20px" width="20px"></a></li>
+                  <li><a href="../../paginas/menu/usuario.html" class="menu"><img id="carrito" src="../../imagenes/iconos/perfil.png" height="20px" width="20px"></a></li>
+              </ul>
+          </nav>
+    </header>
+    <article>
+        <div class="product-container">
+            <div class="image-gallery">
+                <img src="../../imagenes/obras/ghostsAndShadows.png" alt="ghostsAndShadows">
+            </div>
+
+            <div class="product-details">
+                <h1>Ghost and Shadows</h1>
+                <p>"Ghost and Shadows" de George Rouy es una obra que sigue el estilo distintivo del 
+                    artista, donde los cuerpos humanos se presentan en formas abstractas, distorsionadas 
+                    y cargadas de emoción. En esta pintura, Rouy explora la fragilidad de la figura humana, 
+                    representando cuerpos en posiciones vulnerables que parecen desvanecerse o mezclarse con 
+                    su entorno. La obra refleja una tensión entre la presencia física y la ausencia, lo que 
+                    sugiere una exploración profunda de la identidad, la percepción y el estado emocional.</p>
+            
+                <button class="add-to-cart" onclick="addToCart('Ghost and Shadows', '../../imagenes/obras/ghostsAndShadows.png', 5000.00)">Añadir al Carrito</button>
+                <button class="buy-now">Comprar Ahora</button>
+                <div class="product-info">
+                    <p><strong>Artista:</strong> George Rouy</p>
+                    <p><strong>Año:</strong> 2022</p>
+                    <p id="precio"><strong>Precio:</strong> $5,000.00</p>
+                    <p><strong>Tamaño:</strong> 120cm x 80cm</p>
+                </div>
+            </div>
+        </div>
+    </article>  
+    <script src="../../js/carrito.js"></script>
+    <script src="../../js/menuAdaptable.js"></script>
+</body>
+</html>

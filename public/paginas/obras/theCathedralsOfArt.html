@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estiloGeneral.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Revalia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Revalia&display=swap" rel="stylesheet">      
+    <title>The Cathedrals of Art</title>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">InspirArte</h1>
+        <nav>
+            <div class="logo">InspirArte</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            </div>
+            <ul class="nav-links">
+                <li><button class="close-menu" onclick="toggleMenu()">←</button></li> 
+                  <li><a href="../../paginas/menu/artistas.html" class="menu">Artistas</a> </li>
+                  <li><a href="../../paginas/menu/contacto.html" class="menu">Contacto</a> </li>
+                  <li><a href="../../paginas/menu/eventos.html" class="menu">Eventos</a> </li>
+                  <li><a href="../../paginas/menu/noticias.html" class="menu">Noticias</a> </li>
+                  <li><a href="../../paginas/menu/carrito.html" class="menu"><img id="carrito" src="../../imagenes/iconos/carrito.png" height="20px" width="20px"></a></li>
+                  <li><a href="../../paginas/menu/usuario.html" class="menu"><img id="carrito" src="../../imagenes/iconos/perfil.png" height="20px" width="20px"></a></li>
+              </ul>
+          </nav>
+    </header>
+    <article>
+        <div class="product-container">
+            <div class="image-gallery">
+                <img src="../../imagenes/obras/theCathedralsOfArt.png" alt="theCathedralsOfArt">
+            </div>
+
+            <div class="product-details">
+                <h1>The Cathedrals of Art</h1>
+                <p>"The Cathedrals of Art" (1942) de Florine Stettheimer es una obra monumental que 
+                    representa el mundo del arte en Nueva York de la década de 1940, destacando las 
+                    principales instituciones artísticas de la ciudad: el Metropolitan Museum of Art, 
+                    el Museum of Modern Art (MoMA) y el Whitney Museum of American Art. La pintura 
+                    combina figuras influyentes del arte y la crítica de esa época en un escenario 
+                    fantasioso y teatral, haciendo referencia tanto a los museos como a las personas 
+                    que los dirigían.</p>
+            
+                <button class="add-to-cart" onclick="addToCart('The Cathedrals of Art', '../../imagenes/obras/theCathedralsOfArt.png', 7150.30)">Añadir al Carrito</button>
+                <button class="buy-now">Comprar Ahora</button>
+                <div class="product-info">
+                    <p><strong>Artista:</strong> Florine Stettheimer</p>
+                    <p><strong>Año:</strong> 1942</p>
+                    <p id="precio"><strong>Precio:</strong> $7,150.30</p>
+                    <p><strong>Tamaño:</strong> 120cm x 80cm</p>
+                </div>
+            </div>
+        </div>
+    </article>    
+    <script src="../../js/carrito.js"></script>
+    <script src="../../js/menuAdaptable.js"></script>
+</body>
+</html>
