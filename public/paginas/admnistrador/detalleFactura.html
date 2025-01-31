@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estiloGeneral.css">
+    <link rel="stylesheet" href="../../css/estilosprueba.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Detalle de Factura</title>
+</head>
+<body>
+    <h2>Detalle de Factura</h2>
+    <p><strong>ID Factura:</strong> <span id="idFactura"></span></p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody id="detalleTabla"></tbody>
+    </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const idFactura = params.get("id");
+            document.getElementById("idFactura").textContent = idFactura;
+
+            fetch(`http://172.16.0.133:3000/api/facturas/detalle/${idFactura}`)
+                .then(response => response.json())
+                .then(data => {
+                    let tableBody = document.getElementById("detalleTabla");
+                    tableBody.innerHTML = "";
+                    data.forEach(item => {
+                        tableBody.innerHTML += `
+                            <tr>
+                                <td>${item.pro_nombre}</td>
+                                <td>${item.pxf_cantidad}</td>
+                                <td>${item.pro_precio_venta}</td>
+                                <td>${item.estado_pro_fac}</td>
+                            </tr>
+                        `;
+                    });
+                })
+                .catch(error => console.error("Error cargando detalles de factura:", error));
+        });
+    </script>
+</body>
+</html>

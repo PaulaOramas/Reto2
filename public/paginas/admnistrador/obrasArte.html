@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estiloGeneral.css"></link>
+    <link rel="stylesheet" href="../../css/estilosprueba.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Revalia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Revalia&display=swap" rel="stylesheet">               
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>InspirArte</title>
+</head>
+<body>
+    <header>
+      <h1 style="text-align: center;">InspirArte</h1>
+        <nav>
+          <div class="logo">Obras de Arte</div>
+          <div class="menu-icon" onclick="toggleMenu()">☰</div>
+          </div>
+          <ul class="nav-links">
+            <li><button class="close-menu" onclick="toggleMenu()">←</button></li>
+            <li><a href="../../paginas/admnistrador/clientes.html" class="menu">Clientes</a> </li>
+              <li><a href="../../paginas/admnistrador/usuarios.html" class="menu">Ususarios</a> </li>
+              <li><a href="../../paginas/admnistrador/facturas.html" class="menu">Facturas</a> </li>
+              <li><a href="../../paginas/admnistrador/obrasArte.html" class="menu">Obras de Arte</a> </li>
+              <li><a href="../../paginas/admnistrador/inicio.html" class="menu"><img id="carrito" src="../../imagenes/iconos/perfil.png" height="20px" width="20px"></a></li>
+          </ul>
+    </header>
+    <article>
+        <section>
+            <h2>Filtros de Búsqueda</h2>
+            <form id="searchForm">
+                <input type="text" name="pro_descripcion" placeholder="Nombre de la Obra">
+                <input type="text" name="art_nombre" placeholder="Artista">
+                <input type="text" name="estado_pro" placeholder="Estado">
+                <button type="submit" class="btn-primary">Filtrar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Listado de Productos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Artista</th>
+                        <th>Stock</th>
+                        <th>Precio</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="../../imagenes/obra1.jpg" alt="Obra de Arte"></td>
+                        <td>Obra de Arte 1</td>
+                        <td>Artista 1</td>
+                        <td>10</td>
+                        <td>$200.00</td>
+                        <td>ACT</td>
+                        <td class="actions">
+                            <button class="modify">Modificar Precio</button>
+                            <button class="status">Cambiar Estado</button>
+                        </td>
+                    </tr>
+                    <!-- Más filas aquí -->
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Ingreso de Nuevos Productos</h2>
+            <form id="addProductForm">
+                <input type="text" name="pro_descripcion" placeholder="Nombre de la Obra">
+                <select name="art_nombre">
+                    <option value="ACT">Wanda Koop</option>
+                    
+                </select>
+                <input type="number" name="pro_stock" placeholder="Stock">
+                <input type="number" name="pro_precio_venta" placeholder="Precio">
+                <input type="file" name="pro_imagen" accept="image/*">
+                <select name="estado_pro">
+                    <option value="ACT">Activo</option>
+                    <option value="INA">Inactivo</option>
+                </select>
+                <button type="submit" class="btn-primary">Guardar</button>
+            </form>
+        </section>
+    </article>  
+
+    <script src="../../js/menuAdaptable.js"></script>
+</body>
+</html>

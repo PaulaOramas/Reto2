@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Envía los datos al servidor
+        // Envía los datos al servidor para el inicio de sesión
         fetch('/api/login', {
             method: 'POST',
             headers: {

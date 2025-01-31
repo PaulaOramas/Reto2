@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estiloGeneral.css">
+    <link rel="stylesheet" href="../../css/estilosprueba.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>InspirArte - Facturas</title>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">InspirArte</h1>
+        <nav>
+            <div class="logo">Facturas</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><button class="close-menu" onclick="toggleMenu()">←</button></li>
+                <li><a href="../admnistrador/clientes.html" class="menu">Clientes</a></li>
+                <li><a href="../administrador/usuarios.html" class="menu">Usuarios</a></li>
+                <li><a href="../administrador/facturas.html" class="menu">Facturas</a></li>
+                <li><a href="../admnistrador/obrasArte.html" class="menu">Obras de Arte</a></li>
+                <li><a href="../administrador/inicio.html" class="menu"><img id="carrito" src="../../imagenes/iconos/perfil.png" height="20px" width="20px"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <div class="container">
+            <section class="filter-section">
+                <h2>Filtros de búsqueda</h2>
+                <form id="filter-form">
+                    <div class="form-group">
+                        <label for="filter-cliente">Cliente</label>
+                        <input type="text" id="filter-cliente" name="filter-cliente" placeholder="Buscar por cliente">
+                    </div>
+                    <div class="form-group">
+                        <label for="filter-fecha-inicio">Fecha Inicio</label>
+                        <input type="date" id="filter-fecha-inicio" name="filter-fecha-inicio">
+                    </div>
+                    <div class="form-group">
+                        <label for="filter-fecha-fin">Fecha Fin</label>
+                        <input type="date" id="filter-fecha-fin" name="filter-fecha-fin">
+                    </div>
+                    <button type="submit" class="btn-primary">Filtrar</button>
+                </form>
+            </section>
+
+            <section class="table-section">
+                <h2>Listado de Facturas</h2>
+                <table id="facturas-table">
+                    <thead>
+                        <tr>
+                            <th>ID Factura</th>
+                            <th>ID Cliente</th>
+                            <th>Fecha y Hora</th>
+                            <th>Subtotal</th>
+                            <th>IVA</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </div>
+    </article>
+
+    <script src="../../js/menuAdaptable.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("filter-form").addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const cliente = document.getElementById("filter-cliente").value;
+            const fechaInicio = document.getElementById("filter-fecha-inicio").value;
+            const fechaFin = document.getElementById("filter-fecha-fin").value;
+
+            let query = `http://172.16.0.133:3000/api/facturas?cliente=${encodeURIComponent(cliente)}&fechaInicio=${fechaInicio}&fechaFin=${fechaFin}`;
+
+            fetch(query)
+                .then(response => response.json())
+                .then(facturas => {
+                    const tableBody = document.querySelector("#facturas-table tbody");
+                    tableBody.innerHTML = "";
+
+                    facturas.forEach(factura => {
+                        let row = `<tr>
+                            <td>${factura.id_factura}</td>
+                            <td>${factura.cli_cedula}</td>
+                            <td>${factura.fac_fecha}</td>
+                            <td>${factura.fac_monto}</td>
+                            <td>15%</td>
+                            <td>${factura.estado_fac}</td>
+                            <td class="actions">
+                                <button class="view" onclick="viewDetails('${factura.id_factura}')">Ver Detalle</button>
+                                <button class="view" onclick="anularFactura('${factura.id_factura}')">Anular</button>
+                            </td>
+                        </tr>`;
+                        tableBody.innerHTML += row;
+                    });
+                })
+                .catch(error => console.error("Error al obtener facturas:", error));
+        });
+    });
+
+    function viewDetails(idFactura) {
+        window.open(`detalleFactura.html?id=${idFactura}`, '_blank');
+    }
+
+    function anularFactura(idFactura) {
+        if (confirm("¿Seguro que deseas anular esta factura?")) {
+            fetch(`http://172.16.0.133:3000/api/facturas/anular/${idFactura}`, {
+                method: "PUT"
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Factura anulada correctamente.");
+                    location.reload();
+                } else {
+                    alert("Error al anular la factura.");
+                }
+            })
+            .catch(error => console.error("Error al anular factura:", error));
+        }
+    }
+    </script>
+</body>
+</html>

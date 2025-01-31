@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estiloGeneral.css">
+    <link rel="stylesheet" href="../../css/estilosprueba.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>InspirArte - Clientes</title>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">InspirArte</h1>
+        <nav>
+            <div class="logo">Clientes</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><button class="close-menu" onclick="toggleMenu()">←</button></li>
+                <li><a href="../../paginas/administrador/clientes.html" class="menu">Clientes</a></li>
+                <li><a href="../../paginas/administrador/usuarios.html" class="menu">Usuarios</a></li>
+                <li><a href="../../paginas/administrador/facturas.html" class="menu">Facturas</a></li>
+                <li><a href="../../paginas/administrador/obrasArte.html" class="menu">Obras de Arte</a></li>
+                <li><a href="../../paginas/administrador/inicio.html" class="menu"><img id="carrito" src="../../imagenes/iconos/perfil.png" height="20px" width="20px"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <section class="filter-section">
+            <h2>Filtros de Búsqueda</h2>
+            <form id="searchForm">
+                <input type="text" id="filter-cedula" placeholder="Cédula">
+                <input type="text" id="filter-nombre" placeholder="Nombre del Cliente">
+                <input type="text" id="filter-apellido" placeholder="Apellido">
+                <input type="text" id="filter-email" placeholder="Correo Electrónico">
+                <input type="text" id="filter-telefono" placeholder="Teléfono">
+                <button type="submit">Filtrar</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>Listado de Clientes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cédula</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Intereses</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filas generadas dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="form-section">
+            <h2>Registro de Clientes</h2>
+            <form id="addClientForm">
+                <input type="text" id="cli_cedula" placeholder="Cédula">
+                <input type="text" id="cli_nombre" placeholder="Nombre">
+                <input type="text" id="cli_apellido" placeholder="Apellido">
+                <input type="text" id="cli_mail" placeholder="Correo Electrónico">
+                <input type="text" id="cli_telefono" placeholder="Teléfono">
+                <input type="text" id="cli_direccion" placeholder="Dirección">
+                <input type="date" id="cli_fecha_nacimiento" placeholder="Fecha de Nacimiento">
+                <input type="text" id="cli_intereses" placeholder="Intereses">
+                <button type="submit">Guardar Cliente</button>
+            </form>
+        </section>
+    </article>
+
+    <script src="../../js/menuAdaptable.js"></script>
+    <script >
+        document.addEventListener("DOMContentLoaded", () => {
+    // Manejo del formulario de búsqueda de clientes
+    document.getElementById("searchForm").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const cedula = document.getElementById("filter-cedula").value;
+        const nombre = document.getElementById("filter-nombre").value;
+        const apellido = document.getElementById("filter-apellido").value;
+        const email = document.getElementById("filter-email").value;
+        const telefono = document.getElementById("filter-telefono").value;
+
+        let query = `http://172.16.0.133:3000/api/clientes?cedula=${cedula}&nombre=${encodeURIComponent(nombre)}&apellido=${encodeURIComponent(apellido)}&email=${encodeURIComponent(email)}&telefono=${telefono}`;
+
+        fetch(query)
+            .then(response => response.json())
+            .then(clientes => {
+                const tableBody = document.querySelector("table tbody");
+                tableBody.innerHTML = "";
+
+                clientes.forEach(cliente => {
+                    let row = `<tr>
+                        <td>${cliente.cli_cedula}</td>
+                        <td>${cliente.cli_nombre}</td>
+                        <td>${cliente.cli_apellido}</td>
+                        <td>${cliente.cli_mail}</td>
+                        <td>${cliente.cli_telefono}</td>
+                        <td>${cliente.cli_direccion}</td>
+                        <td>${cliente.cli_fecha_nacimiento}</td>
+                        <td>${cliente.cli_intereses}</td>
+                        <td>
+                            <button onclick="modificarCliente('${cliente.cli_cedula}')">Modificar</button>
+                            <button onclick="eliminarCliente('${cliente.cli_cedula}')">Eliminar</button>
+                        </td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+            })
+            .catch(error => console.error("Error al obtener clientes:", error));
+    });
+
+    // Manejo del formulario de registro de clientes
+    document.getElementById("addClientForm").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const cliente = {
+            cli_cedula: document.getElementById("cli_cedula").value,
+            cli_nombre: document.getElementById("cli_nombre").value,
+            cli_apellido: document.getElementById("cli_apellido").value,
+            cli_mail: document.getElementById("cli_mail").value,
+            cli_telefono: document.getElementById("cli_telefono").value,
+            cli_direccion: document.getElementById("cli_direccion").value,
+            cli_fecha_nacimiento: document.getElementById("cli_fecha_nacimiento").value,
+            cli_intereses: document.getElementById("cli_intereses").value
+        };
+
+        fetch("http://172.16.0.133:3000/api/clientes", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(cliente)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("Cliente agregado exitosamente.");
+                location.reload();
+            } else {
+                alert("Error al agregar cliente.");
+            }
+        })
+        .catch(error => console.error("Error al agregar cliente:", error));
+    });
+});
+
+// Función para modificar un cliente
+function modificarCliente(cedula) {
+    alert(`Función de modificación para el cliente con cédula ${cedula} aún no implementada.`);
+}
+
+// Función para eliminar un cliente
+function eliminarCliente(cedula) {
+    if (confirm(`¿Seguro que deseas eliminar al cliente con cédula ${cedula}?`)) {
+        fetch(`http://172.16.0.133:3000/api/clientes/${cedula}`, {
+            method: "DELETE"
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("Cliente eliminado correctamente.");
+                location.reload();
+            } else {
+                alert("Error al eliminar cliente.");
+            }
+        })
+        .catch(error => console.error("Error al eliminar cliente:", error));
+    }
+}
+
+    </script>
+</body>
+</html>

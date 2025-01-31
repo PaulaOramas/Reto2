@@ -3,34 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/estiloGeneral.css"></link>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Revalia&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Iceberg&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Revalia&display=swap" rel="stylesheet">      
-    <title>Eaten // Fled Tears</title>
+    <link rel="stylesheet" href="../../css/estiloGeneral.css">
+    <title>Obras del Artista</title>
 </head>
 <body>
     <header>
         <h1 style="text-align: center;">InspirArte</h1>
         <nav>
             <div class="logo">InspirArte</div>
-            <div class="menu-icon" onclick="toggleMenu()">☰</div>
-            </div>
             <ul class="nav-links">
-                <li><button class="close-menu" onclick="toggleMenu()">←</button></li> 
-                  <li><a href="../../paginas/menu/artistas.html" class="menu">Artistas</a> </li>
-                  <li><a href="../../paginas/menu/contacto.html" class="menu">Contacto</a> </li>
-                  <li><a href="../../paginas/menu/eventos.html" class="menu">Eventos</a> </li>
-                  <li><a href="../../paginas/menu/noticias.html" class="menu">Noticias</a> </li>
-                  <li><a href="../../paginas/menu/carrito.html" class="menu"><img id="carrito" src="../../imagenes/iconos/carrito.png" height="20px" width="20px"></a></li>
-                  <li><a href="../../paginas/menu/usuario.html" class="menu"><img id="carrito" src="../../imagenes/iconos/perfil.png" height="20px" width="20px"></a></li>
-              </ul>
-          </nav>
-    </header>
-    
+                <li><a href="../../paginas/menu/artistas.html">Artistas</a></li>
+                <li><a href="../../paginas/menu/contacto.html">Contacto</a></li>
+                <li><a href="../../paginas/menu/eventos.html">Eventos</a></li>
+                <li><a href="../../paginas/menu/noticias.html">Noticias</a></li>
+                <li><a href="../../paginas/menu/carrito.html"><img src="../../imagenes/iconos/carrito.png" height="20px"></a></li>
+                <li><a href="../../paginas/menu/usuario.html"><img src="../../imagenes/iconos/perfil.png" height="20px"></a></li>
+            </ul>
+        </nav>
+    </header> 
+
     <article>
         <h2 style="text-align: center;">Adelisa Selimbašić</h2>
       <div class="gallery">
@@ -42,7 +33,57 @@
           </div>  
       </div>
     </article>
-    
     <script src="../../js/menuAdaptable.js"></script>
+    <script>
+        /*document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            let nombreArtista = params.get("nombre");
+
+            if (!nombreArtista) {
+                document.body.innerHTML = "<h1>Artista no encontrado</h1>";
+                return;
+            }
+
+            // Eliminar espacios adicionales y normalizar el nombre del artista
+            nombreArtista = decodeURIComponent(nombreArtista).trim();
+
+            document.getElementById("artistaNombre").textContent = nombreArtista;
+
+            fetch(`/api/obras/artista/${encodeURIComponent(nombreArtista)}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Error en la respuesta del servidor: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(obras => {
+                    const obrasContainer = document.getElementById("obrasContainer");
+                    obrasContainer.innerHTML = "";
+
+                    if (obras.length === 0) {
+                        obrasContainer.innerHTML = "<p>No hay obras disponibles para este artista.</p>";
+                        return;
+                    }
+
+                    obras.forEach(obra => {
+                        const obraCard = document.createElement("div");
+                        obraCard.classList.add("card");
+
+                        obraCard.innerHTML = `
+                            <a href="obra.html?nombre=${encodeURIComponent(nombreArtista)}&id=${obra.id_producto}">
+                                <img src="${obra.pro_imagen}" alt="${obra.pro_nombre}">
+                            </a>
+                            <a href="obra.html?nombre=${encodeURIComponent(nombreArtista)}&id=${obra.id_producto}" class="enlace">${obra.pro_nombre}</a>
+                        `;
+
+                        obrasContainer.appendChild(obraCard);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error cargando obras:", error);
+                    document.getElementById("obrasContainer").innerHTML = "<p>Error al cargar las obras.</p>";
+                });
+        });*/
+    </script>
 </body>
 </html>

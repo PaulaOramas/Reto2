@@ -1,3 +1,0 @@
-Nombre: Paula, Apellido: Oramas, Cédula: 1701, Username: paoramas, Email: paoramas@puce.edu.ec, Teléfono: 098129 0567, Dirección: la Armenia, Fecha de Nacimiento: 2024-12-18, Intereses: Arte contemporaneo, Password: 12345
-Nombre: Marcela, Apellido: Valladares, Cédula: 1702, Username: bvalladares212, Email: bvalladares212@email.com, Teléfono: 098129 0567, Dirección: la Armenia, Fecha de Nacimiento: 2024-12-20, Intereses: Arte contemporaneo, Password: 123
-

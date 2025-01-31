@@ -25,6 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Deshabilitar el botón de envío mientras se procesa
+        const submitButton = document.querySelector('.btn-enviar');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Registrando...';
+
         // Enviar los datos al servidor
         try {
             const response = await fetch('/api/register', {
@@ -42,14 +47,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = '../../paginas/menu/usuario.html';
             } else {
                 alert(result.message || 'Ocurrió un error al registrar la cuenta.');
+                submitButton.disabled = false;
+                submitButton.textContent = 'Crear Cuenta';
             }
         } catch (error) {
             console.error('Error al enviar los datos:', error);
-            alert('Error al conectar con el servidor. Inténtalo más tarde.');
+            alert('Error al conectar con el servidor. Inténtalo más tarde.' + error);
+            submitButton.disabled = false;
+            submitButton.textContent = 'Crear Cuenta';
         }
     });
 });
 
+// Mantener los valores del formulario en sessionStorage
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     const inputs = form.querySelectorAll('input, textarea, select');
